@@ -1,30 +1,88 @@
 # Docker-Project
 
-täne tulee sit jotain tavaraa loremipsun jnejne
+Tämä projekti esittelee yksinkertaisen Docker-pohjaisen sovelluksen, jossa on frontend, backend, tietokanta ja nginx reverse-proxy.  
 
+---
 
-Tässä on kuva sovelluksesta:
+## 1. Projektirakenne
 
-![Sovelluskuva](images/image1.png)
+Projekti on jaettu selkeisiin kansioihin:
 
-TÄSTÄ ALKAA DOKUMENTAATIO
-Loin Dockerprojektille selkeän hakemiston: Backend, frontend, database, nginx ja lisäsin docker-compose-tiedoston.
-![Sovelluskuva](images/image2.png)
+- **backend/** – Node.js backend, Express + MySQL
+- **frontend/** – HTML, CSS, JS + mahdollisuus ladata GitHub README
+- **database/** – MySQL init-tiedostot
+- **nginx/** – nginx reverse-proxy
+- **docker-compose.yml** – koko projektin orchestrointi
 
-Docker yml tiedostosta screenshot. ensimmäiset määritykset, mitä kontin ajolla ajetaan: nginx, reverse-proxy ja rakennetaan frontendiin!
-![Sovelluskuva](images/image3.png)
+---
 
-nginx running ja näkyy frontendissä localhost sivulla!
-![Sovelluskuva](images/image4.png)
+## 2. Sovelluksen esittely
 
-Backend hakemisto
-![Sovelluskuva](images/image5.png)
+### Sovelluskuva
+![Sovelluskuva](images/image1.png)  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.  
 
-backend dockerfile
-![Sovelluskuva](images/image6.png)
+---
 
-backend package.json tiedosto
-![Sovelluskuva](images/image7.png)
+### Dokumentaation aloitus
+Tässä dokumentaatiossa käydään läpi projektin rakenteen ja Dockerin konfiguraation.
 
-päivitin dockercompose tiedostoa. 
-![Sovelluskuva](images/image8.png)
+#### Sovelluskuva 2
+![Sovelluskuva](images/image2.png)  
+Projektille luotu selkeä hakemistorakenne helpottaa ylläpitoa ja kehitystä.  
+
+---
+
+## 3. Docker-compose
+
+docker-compose.yml määrittelee kaikki palvelut:
+
+- **nginx** – frontendin ja backendin reverse-proxy
+- **frontend** – HTML/CSS/JS sovellus
+- **backend** – Node.js + MySQL
+- **database** – MySQL kontti
+
+### Docker-compose screenshot
+![Sovelluskuva](images/image3.png)  
+Ensimmäiset määritykset: portit, ympäristömuuttujat ja riippuvuudet.
+
+---
+
+### Nginx käynnissä
+![Sovelluskuva](images/image4.png)  
+Nginx reverse-proxy toimii ja frontend näkyy localhost-sivulla.  
+
+---
+
+## 4. Backend
+
+Backend-hakemisto sisältää seuraavat tiedostot ja kansiot:
+
+- **Dockerfile** – määrittää Node.js ympäristön
+- **app.js** – API endpoints
+- **package.json** – riippuvuudet
+
+### Backend Dockerfile
+![Sovelluskuva](images/image5.png)  
+Tiedosto rakentaa Node.js kontti ja määrittää portit ja ympäristömuuttujat.
+
+---
+
+### Päivitetty docker-compose
+![Sovelluskuva](images/image6.png)  
+Lisätty restart-säännöt ja depends_on backendille ja database-kontille.
+
+---
+
+### Yhteenveto
+
+Projekti näyttää:
+
+- Miten Dockerin eri kontit kommunikoivat keskenään
+- Kuinka frontend ja backend voidaan yhdistää nginx reverse-proxyn kautta
+- Helpon tavan ladata README tai kuvia frontendille
+- Selkeän hakemistorakenteen ja dokumentaation
+
+#### Lopuksi
+![Sovelluskuva](images/image7.png)  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec dui eget lorem elementum scelerisque.
