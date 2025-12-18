@@ -22,7 +22,7 @@ services:
       - DB_NAME=dockerdb
     depends_on:
       - database
-    restart: always   # näin backend yrittää uudestaan jos DB ei ole vielä valmis
+    restart: always
 
   frontend:
     build:
