@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Muistiinpanot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Muistiinpanot</h1>
+
+  <h2>Omat GitHub-muistiinpanot</h2>
+  <div id="githubNotes">
+    <p>Ladataan GitHub README...</p>
+  </div>
+
+  <form id="noteForm">
+    <input type="text" id="user" placeholder="Nimesi" required>
+    <textarea id="message" placeholder="Kirjoita muistiinpano..." required></textarea>
+    <button type="submit">Tallenna</button>
+  </form>
+
+  <h2>Kaikki muistiinpanot:</h2>
+  <ul id="notesList"></ul>
+
+  <script src="app.js"></script>
+</body>
+</html>
