@@ -20,15 +20,15 @@ Tämä rakenne mahdollistaa modulaarisen kehityksen, helpottaa ylläpitoa ja tek
 
 ## 2. Sovelluksen esittely
 
-### Sovelluskuva
-![Sovelluskuva](images/image1.png)  
-Ensimmäinen näkymä frontendistä. Sovellus tarjoaa mahdollisuuden kirjoittaa ja tarkastella muistiinpanoja.
+### Kissa avaruuspuvussa
+![Avaruuskissa](images/image1.png)  
+Tämä oli projektin luonnissa testi kuvana, jonka takia jätin projektiin (ei liity muuten :D)
 
 ---
 
 ### Projektin aloitus
-#### Sovelluskuva 2
-![Sovelluskuva](images/image2.png)  
+#### Hakemistorakenne
+![Hakemistorakenne](images/image2.png)  
 Hakemistorakenne on selkeä ja modulaarinen. Backend, frontend ja tietokanta ovat erillisiä kontteja, mikä helpottaa skaalautuvuutta.
 
 ---
@@ -43,13 +43,13 @@ docker-compose.yml määrittelee kaikki palvelut ja niiden riippuvuudet:
 - **database** – MySQL kontti, jossa tietokanta ja taulut luodaan init.sql-tiedostosta
 
 ### Docker-compose screenshot
-![Sovelluskuva](images/image3.png)  
+![Docker-compose](images/image3.png)  
 Ensimmäiset määritykset: portit, ympäristömuuttujat, restart-säännöt ja riippuvuudet.
 
 ---
 
 ### Nginx käynnissä
-![Sovelluskuva](images/image4.png)  
+![Nginxrunning](images/image4.png)  
 Nginx toimii reverse-proxyna, joka yhdistää frontendin ja backendin saumattomasti.
 
 ---
@@ -62,22 +62,21 @@ Backend-hakemisto sisältää:
 - **app.js** – API endpoints: muistiinpanojen luonti, haku ja poisto
 - **package.json** – riippuvuudet ja skriptit
 
-### Backend Dockerfile
-![Sovelluskuva](images/image5.png)  
-Rakentaa Node.js kontti, asettaa portit ja ympäristömuuttujat.
+### Backend hakemisto
+![backendhakemisto](images/image5.png)  
 
 ---
 
-### Päivitetty docker-compose
-![Sovelluskuva](images/image6.png)  
-Lisätty restart-säännöt ja depends_on backendille ja database-kontille, mikä takaa järjestelmän vakaan käynnistyksen.
+### Backend Dockerfile
+![Dockerfile](images/image6.png)  
+Rakentaa Node.js kontti, asettaa portit ja ympäristömuuttujat.
 
 ---
 
 ## 5. Tietokanta
 
 ### init.sql
-![Sovelluskuva](images/image8.png)  
+![initsql](images/image8.png)  
 database-kansiossa oleva init.sql luo taulut ja tietokannan ensimmäisen ajon yhteydessä. Tämä mahdollistaa helpon ympäristön uudelleenkäynnistyksen ilman tietojen menetyksiä.
 
 ---
@@ -87,10 +86,10 @@ database-kansiossa oleva init.sql luo taulut ja tietokannan ensimmäisen ajon yh
 Frontendissä on lomake omien muistiinpanojen lisäämiseen ja lista kaikista tallennetuista muistiinpanoista.
 
 ### Lisääminen ja poistaminen
-![Sovelluskuva](images/image10.png)  
+![muistiinpanojenlisääminen](images/image10.png)  
 Kokeilin toimintaa lisäämällä muistiinpanoja. Käynnistin kontit uudelleen, ja muistiinpanot säilyivät.
 
-![Sovelluskuva](images/image11.png)  
+![muistiinpanojenpoistaminen](images/image11.png)  
 Backendin app.js tiedostoon lisätty mahdollisuus poistaa muistiinpanoja ID:n perusteella.
 
 ---
@@ -99,13 +98,13 @@ Backendin app.js tiedostoon lisätty mahdollisuus poistaa muistiinpanoja ID:n pe
 
 Frontend hakee dokumentaation GitHub README:stä. Alussa suoran fetchaamisen estivät GitHubin CORS-rajoitukset, mutta raw-versio toimii ongelmitta.
 
-![Sovelluskuva](images/image13.png)  
+![appjs](images/image13.png)  
 Markdown-renderointi mahdollistaa kuvien ja tekstin esittämisen oikein frontendissä.
 
-![Sovelluskuva](images/image14.png)  
+![htmlmarkedjs](images/image14.png)  
 Lisätty marked.js kirjasto frontendissä Markdownin HTML-renderointiin.
 
-![Sovelluskuva](images/image15.png)  
+![toimivuus](images/image15.png)  
 Kokeilin sovelluksen toimintaa, ja README näkyy oikein paikallisesti ajetussa Docker-ympäristössä.
 
 ---
@@ -113,12 +112,15 @@ Kokeilin sovelluksen toimintaa, ja README näkyy oikein paikallisesti ajetussa D
 ## 8. Tyylittely ja UX
 
 ### CSS
-![Sovelluskuva](images/image16.png)  
+![css](images/image16.png)  
 Lisätty tyylittelyä, scrollattava alue GitHub README:lle, muistiinpanojen lista ja lomake.  
 
 ### Lopputulos
-![Sovelluskuva](images/image17.png)  
+![lopputulos](images/image17.png)  
 Frontend näyttää selkeältä ja responsiiviselta. Muistiinpanot, kuvat ja dokumentaatio ovat helposti saavutettavissa.
+
+![dockerkontit](images/image17.png)  
+Kaikki 4 konttia ajossa...
 
 ---
 
@@ -131,3 +133,5 @@ Tämä projekti:
 - Tarjoaa helpon tavan ladata ja renderöidä GitHub README HTML:ksi
 - Mahdollistaa muistiinpanojen tallentamisen ja poistamisen MySQL-tietokannasta
 - Selkeä hakemistorakenne helpottaa ylläpitoa ja jatkokehitystä
+
+![viimeinenkuva](images/image19.png)
