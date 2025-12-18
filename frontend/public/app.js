@@ -11,10 +11,11 @@ form.addEventListener("submit", e => {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ user, message })
-  }).then(() => {
-    form.reset();
-    loadNotes();
-  });
+  })
+    .then(() => {
+      form.reset();
+      loadNotes();
+    });
 });
 
 // Hae ja näytä kaikki muistiinpanot
@@ -47,6 +48,7 @@ function loadNotes() {
 // Lataa muistiinpanot heti sivun latauksessa
 loadNotes();
 
+// Lataa ja renderöi GitHub README.md
 function loadGitHubReadme() {
   const githubUrl = "https://raw.githubusercontent.com/jimi22000/Docker-Project/main/README.md";
 
@@ -55,13 +57,17 @@ function loadGitHubReadme() {
       if (!res.ok) throw new Error("GitHub README ei löytynyt");
       return res.text();
     })
-    .then(text => {
+    .then(markdownText => {
       const githubDiv = document.getElementById("githubNotes");
-      githubDiv.textContent = "";
+      githubDiv.innerHTML = marked.parse(markdownText); // Renderöi Markdown HTML:ksi
 
-      const pre = document.createElement("pre");
-      pre.textContent = text;
-      githubDiv.appendChild(pre);
+      // Korjaa kuvat, jos haluat käyttää frontendin images-kansiota
+      githubDiv.querySelectorAll("img").forEach(img => {
+        // Oletetaan, että kuvat on local images-kansiossa
+        if (!img.src.startsWith("http")) {
+          img.src = `images/${img.getAttribute("src")}`;
+        }
+      });
     })
     .catch(err => {
       const githubDiv = document.getElementById("githubNotes");

@@ -25,10 +25,14 @@ services:
     restart: always   # näin backend yrittää uudestaan jos DB ei ole vielä valmis
 
   frontend:
-    build: ./frontend
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
     container_name: frontend
     depends_on:
       - backend
+    restart: always
+
 
   nginx:
     image: nginx:latest
