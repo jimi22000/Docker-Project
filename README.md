@@ -119,7 +119,7 @@ Lisätty tyylittelyä, scrollattava alue GitHub README:lle, muistiinpanojen list
 ![lopputulos](images/image17.png)  
 Frontend näyttää selkeältä ja responsiiviselta. Muistiinpanot, kuvat ja dokumentaatio ovat helposti saavutettavissa.
 
-![dockerkontit](images/image17.png)  
+![dockerkontit](images/image18.png)  
 Kaikki 4 konttia ajossa...
 
 ---
@@ -135,3 +135,19 @@ Tämä projekti:
 - Selkeä hakemistorakenne helpottaa ylläpitoa ja jatkokehitystä
 
 ![viimeinenkuva](images/image19.png)
+
+---
+
+## 10. Ajaminen omalla tietokoneella
+
+Kloonaa projekti ja siirry hakemistoon:
+![githubclone](images/image20.png)
+
+Käynnistä koko sovellus Dockerilla:
+![githubclone](images/image21.png)
+
+Sovellus avautuu selaimessa osoitteessa:
+![githubclone](images/image22.png)
+
+Sammuta ja poista kontit tarvittaessa:
+![githubclone](images/image23.png)
