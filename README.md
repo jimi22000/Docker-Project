@@ -140,14 +140,14 @@ Tämä projekti:
 
 ## 10. Ajaminen omalla tietokoneella
 
-Kloonaa projekti ja siirry hakemistoon:
+Kloonaa projekti ja siirry hakemistoon komennolla: "git clone https://github.com/jimi22000/Docker-Project.git"
 ![githubclone](images/image20.png)
 
-Käynnistä koko sovellus Dockerilla:
+Käynnistä koko sovellus Dockerilla komennolla: "docker compose up --build"
 ![githubclone](images/image21.png)
 
-Sovellus avautuu selaimessa osoitteessa:
+Sovellus avautuu selaimessa osoitteessa: "http://localhost"
 ![githubclone](images/image22.png)
 
-Sammuta ja poista kontit tarvittaessa:
+Sammuta ja poista kontit tarvittaessa komennolla: "docker compose down -v --remove-orphans"
 ![githubclone](images/image23.png)
