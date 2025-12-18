@@ -46,3 +46,28 @@ function loadNotes() {
 
 // Lataa muistiinpanot heti sivun latauksessa
 loadNotes();
+
+function loadGitHubReadme() {
+  const githubUrl = "https://raw.githubusercontent.com/jimi22000/Docker-Project/main/README.md";
+
+  fetch(githubUrl)
+    .then(res => {
+      if (!res.ok) throw new Error("GitHub README ei löytynyt");
+      return res.text();
+    })
+    .then(text => {
+      const githubDiv = document.getElementById("githubNotes");
+      githubDiv.textContent = "";
+
+      const pre = document.createElement("pre");
+      pre.textContent = text;
+      githubDiv.appendChild(pre);
+    })
+    .catch(err => {
+      const githubDiv = document.getElementById("githubNotes");
+      githubDiv.textContent = "README:tä ei saatu ladattua.";
+      console.error(err);
+    });
+}
+
+loadGitHubReadme();
