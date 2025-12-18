@@ -23,8 +23,5 @@ Backend hakemisto
 backend dockerfile
 ![Sovelluskuva](images/image6.png)
 
-backend package.json tiedosto
-![Sovelluskuva](images/image7.png)
-
 päivitin dockercompose tiedostoa. 
-![Sovelluskuva](images/image8.png)
+![Sovelluskuva](images/image7.png)
